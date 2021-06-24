@@ -1,0 +1,36 @@
+
+.d-flex, body {
+    height: 100vh;
+}
+
+.active {
+    background-color: red !important;
+    opacity: 0.7 !important;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.boton:active {
+    background-color: red !important;
+    opacity: 0.7 !important;
+}
+
+@media (max-width: 776px) {
+    .logo {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .menu {
+      display: none;
+    }
+    .explicar {
+      display: show;
+    }
+    .lgo1 {
+      display: none;
+    }
+  }

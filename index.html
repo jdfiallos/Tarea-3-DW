@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.css"><!--FontAwesome-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css"/>
+</head>
+    <body>
+        
+
+        <nav class="navbar navbar-expand-md fixed-top border-bottom" style="background-color: white;">
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-4 ">
+                <i class="fas fa-bars"></i>
+                <img  src="./logo.png" style="cursor: pointer;">
+            </div>
+            <div class="col-7 col-sm-4 col-md-8 col-lg-4 col-xl-6 lgo1" >
+                <select id="usuarioActual" class="w-75 rounded form-control" 
+                onchange="cambiarUsuario()" style="float: right; cursor: pointer;">
+                <option><i class="fas fa-search">Buscar correo</i></option>
+                </select>
+            </div>
+            <div class="explicar" style="display: none;">
+                Ahora se debería manejar con la hamburguesa
+            </div>
+            <div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 logo" style="text-align: center; cursor: pointer;">
+                <i class="far fa-question-circle"></i>
+                <i class="fas fa-cog"></i>
+                <i class="fas fa-ellipsis-h"></i>
+    
+            </div>
+        </nav>
+
+        <main role="main" class="container-fluid">
+
+            <div class="row">
+                <div class="col-4 col-sm-4 col-md-3 col-lg-3 col-xl-2" class="menu1" style="margin-left: -25px; margin-top: 20px;">
+                    <div class="d-flex flex-column flex-shrink-0 p-3 border-right fixed-left menu1">
+                        
+                        <ul class="nav nav-pills flex-column mb-auto mt-5">
+                            <li class="nav-item mt-2 mb-2" style="text-align: center;">
+                                <button class="w-75 btn rounded-pill border" 
+                                style=" color: grey !important;" onclick="modalSent()">Redactar</button>
+                            </li>
+                            <li class="nav-item" id="quantity">
+
+                            </li>
+                            <li>
+                                <button onclick="enviados()"  style="border: none; color: grey !important; cursor: pointer;" class="btn boton">
+                            <i class="fas fa-paper-plane"></i>
+                                Enviados
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="destacados()"  style="border: none; color: grey !important; cursor: pointer;" class="btn boton">
+                                <i class="far fa-star"></i>
+                                Destacados
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="spam()"  style="border: none; color: grey !important; cursor: pointer;" class="btn boton">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Spam
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="papelera()"  style="border: none; color: grey !important; cursor: pointer;" class="btn boton">
+                                <i class="fas fa-trash-alt"></i>
+                                Papelera
+                                </button>
+                            </li>
+                        </ul>
+                        <hr>
+                    </div>
+                </div>
+                <div class="col-8 col-sm-8 col-md-9 col-lg-9 col-xl-10 mt-5" id="correos">
+
+                    <!-- Generado dinamicamente -->
+
+
+                </div>
+            </div>
+
+                    <!-- Modal -->
+                    <div class="modal-dialog" id="letra" 
+                    style="position: fixed; bottom: 0; right: 10px;width: 800px; visibility: hidden ;">
+                        <div class="modal-content">
+                            <div class="modal-header" style="height: 40px; background-color: gray;">
+                                <h5 class="modal-title" id="exampleModalLabel" style="margin-top: -10px; color: white;">Mensaje Nuevo</h5>
+                                <button style="margin-top: -25px; color: white;" type="button" class="close"
+                                onclick="cerrar()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mb-2">
+                                    <div class="col-2">De:</div>
+                                    <div class="col-10">
+                                        <input class="col-12" id="de" type="text">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-2">Para:</div>
+                                    <div class="col-10">
+                                        <input class="col-12" id="para" type="text">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-2">Asunto:</div>
+                                    <div class="col-10">
+                                        <input class="col-12" id="asunto" type="text">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">Mensaje:</div>
+                                    <div class="col-12">
+                                        <textarea class="col-12" id="mensaje" type="text"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3" style="text-align: right;">
+                                <div class="col-11">
+                                    <button type="button" style="background-color: #CB0000; color: white; width: 100px;" 
+                                    class="btn rounded-pill" onclick="emailSent()" >Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+        </main>
+
+
+
+        
+
+        <script src="https://kit.fontawesome.com/0539442b2b.js" crossorigin="anonymous"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/controlador.js"></script>
+    </body>
+</html>
